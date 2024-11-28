@@ -34,6 +34,38 @@ namespace ExamRepetition24
             }
         }
 
+        public List<Car> FindAllModels(string model)
+        {
+            List<Car> tempCars = new List<Car>();
+            foreach (Car car in _cars.Values)
+            {
+                if (car.Model == model)
+                {
+                    tempCars.Add(car);
+                }
+            }
+            return tempCars;
+        }
+
+        public Car FindModel(string model)
+        {
+            //foreach(Car c in _cars.Values)
+            //{
+            //    if (c.Model == model)
+            //        return c; 
+            //}
+            List<Car> tempList = _cars.Values.ToList();
+            for (int i =0; i<_cars.Values.Count; i++)
+            {
+                if (tempList[i].Model == model)
+                {
+                    return tempList[i];
+                }
+            }
+
+            return null;
+        }
+
         public List<Car> GetAll()
         {
             return _cars.Values.ToList();
@@ -52,7 +84,7 @@ namespace ExamRepetition24
         {
             if (_cars.ContainsKey(oldRegNr))
             {
-                _cars.Remove(oldRegNr);
+                _cars.Remove(oldRegNr); //Det er nødvendigt at fjerne den hvis regnr opdateres
                 AddCar(newCar);
             }
         }

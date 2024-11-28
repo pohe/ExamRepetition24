@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,6 +53,50 @@ namespace ExamRepetition24
             Car oldCar = GetCar(oldRegNr);
             oldCar.RegNr = newCar.RegNr;
             oldCar.Model = newCar.Model;
+        }
+
+        public Car FindModel(string model)
+        {
+            // Lav den om til et for loop og et while loop?
+            //foreach(Car c in _cars)
+            //{
+            //    if (c.Model == model)
+            //        return c;
+            //}
+            //For loop
+            //for(int index = 0; index <_cars.Count; index++ )
+            //{
+            //    if (_cars[index].Model== model  )
+            //    {
+            //        return _cars[index];
+            //    }
+            //}
+
+
+            //while loop
+            int i = 0;
+            while(i<_cars.Count)
+            {
+                if (_cars[i].Model == model)
+                {
+                    return _cars[i];
+                }
+                i++;
+            }
+            return null;
+        }
+
+        public List<Car> FindAllModels(string model)
+        {
+            List<Car> tempCars = new List<Car>();
+            foreach (Car car in _cars)
+            {
+                if (car.Model == model)
+                {
+                    tempCars.Add(car);
+                }
+            }
+            return tempCars;
         }
     }
 }

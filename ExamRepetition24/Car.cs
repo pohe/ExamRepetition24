@@ -29,6 +29,11 @@ namespace ExamRepetition24
             Model = model; 
         }
 
+        public virtual void PrintInfo()
+        {
+            Console.WriteLine($"RegNr {_regNr} Model {Model}");
+        }
+
         public override string ToString()
         {
             return $"RegNr {_regNr} Model {Model}";

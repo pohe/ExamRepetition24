@@ -8,6 +8,7 @@ namespace ExamRepetition24
 {
     public interface ICarRepository
     {
+        
         int Count { get; }
 
         void AddCar(Car car);
@@ -16,5 +17,8 @@ namespace ExamRepetition24
         void DeleteCar(string regNr);
         void UpdateCar(Car newCar, string oldRegNr);
 
+        Car FindModel(string model); //finder første car af en given model
+
+        List<Car> FindAllModels(string model);//finder alle cars af en given model
     }
 }
