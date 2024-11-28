@@ -14,7 +14,8 @@ Console.WriteLine(c2);
 
 Console.WriteLine("CarRepositoryList");
 
-ICarRepository carRepo = new CarRepositoryList();
+//ICarRepository carRepo = new CarRepositoryList();
+ICarRepository carRepo = new CarRepositoryDictionary();
 carRepo.AddCar(c1);
 carRepo.AddCar(c2);
 carRepo.AddCar(c3);
