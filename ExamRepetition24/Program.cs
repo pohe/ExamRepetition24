@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ExamRepetition24;
 
+
+//Spg 1. Klasser og Objekter
 Console.WriteLine("Hello, World!");
 Car c1 = new Car("AB 1231", "Volvo");
 Console.WriteLine(c1);
@@ -11,9 +13,15 @@ Console.WriteLine(c3);
 Car c4 = new Car("XDD 4556", "Volvo");
 Console.WriteLine(c4);
 
-Console.WriteLine("CarRepositoryList");
 
+//Spg. 3 CarRepository med List 
+
+//Console.WriteLine("CarRepositoryList");
 //ICarRepository carRepo = new CarRepositoryList();
+
+//Spg. 4 CarRepository med Dictionary med RegNr som key
+
+//Console.WriteLine("CarRepositoryDictionary");
 ICarRepository carRepo = new CarRepositoryDictionary();
 carRepo.AddCar(c1);
 carRepo.AddCar(c2);
@@ -44,6 +52,7 @@ foreach (Car c in cars)
 {
     Console.WriteLine(c);
 }
+//Spg 5. Inheritance (Arv)
 Console.WriteLine("Arv");
 ECar eCar = new ECar("ER 3434", "Saab", 500);
 //Car eCar = new ECar("ER 3434", "Saab", 500);
@@ -59,6 +68,8 @@ foreach (Car c in cars)
     Console.WriteLine(c);
 }
 
+//Spg. 6 Søgning/Filtrering
+// Spg. 7 Løkke strukturer
 Console.WriteLine("Find model");
 Car foundCar = carRepo.FindModel("Volvo");
 Console.WriteLine(foundCar);

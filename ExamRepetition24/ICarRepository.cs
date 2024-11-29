@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ExamRepetition24
 {
+
+    /// <summary>
+    /// Spg 2. Interface
+    /// </summary>
     public interface ICarRepository
     {
         

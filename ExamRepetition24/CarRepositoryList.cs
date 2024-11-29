@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace ExamRepetition24
 {
+
+    /// <summary>
+    /// Spg. 3 CarRepository med List 
+    /// </summary>
     public class CarRepositoryList : ICarRepository
     {
         private List<Car> _cars;
@@ -55,6 +59,7 @@ namespace ExamRepetition24
             oldCar.Model = newCar.Model;
         }
 
+        //Spg. 6 Søgning/Filtrering
         public Car FindModel(string model)
         {
             // Lav den om til et for loop og et while loop?
@@ -63,7 +68,7 @@ namespace ExamRepetition24
             //    if (c.Model == model)
             //        return c;
             //}
-            //For loop
+            //For loop Spg. 7 Løkke strukturer
             //for(int index = 0; index <_cars.Count; index++ )
             //{
             //    if (_cars[index].Model== model  )
@@ -72,7 +77,7 @@ namespace ExamRepetition24
             //    }
             //}
 
-
+            //Spg. 7 Løkke strukturer
             //while loop
             int i = 0;
             while(i<_cars.Count)
@@ -86,6 +91,7 @@ namespace ExamRepetition24
             return null;
         }
 
+        //Spg. 6 Søgning/Filtrering
         public List<Car> FindAllModels(string model)
         {
             List<Car> tempCars = new List<Car>();

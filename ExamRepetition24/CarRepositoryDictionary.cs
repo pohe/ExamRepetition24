@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ExamRepetition24
 {
+    /// <summary>
+    /// Spg. 4 CarRepository med Dictionary med RegNr som key
+    /// </summary>
     public class CarRepositoryDictionary : ICarRepository
     {
         private Dictionary<string, Car> _cars;
@@ -34,6 +37,7 @@ namespace ExamRepetition24
             }
         }
 
+        //Spg. 6 Søgning/Filtrering
         public List<Car> FindAllModels(string model)
         {
             List<Car> tempCars = new List<Car>();
@@ -47,6 +51,7 @@ namespace ExamRepetition24
             return tempCars;
         }
 
+        //Spg. 6 Søgning/Filtrering
         public Car FindModel(string model)
         {
             //foreach(Car c in _cars.Values)
@@ -54,6 +59,7 @@ namespace ExamRepetition24
             //    if (c.Model == model)
             //        return c; 
             //}
+            //Spg. 7 Løkke strukturer
             List<Car> tempList = _cars.Values.ToList();
             for (int i =0; i<_cars.Values.Count; i++)
             {
@@ -82,11 +88,8 @@ namespace ExamRepetition24
 
         public void UpdateCar(Car newCar, string oldRegNr)
         {
-            if (_cars.ContainsKey(oldRegNr))
-            {
-                _cars.Remove(oldRegNr); //Det er nødvendigt at fjerne den hvis regnr opdateres
-                AddCar(newCar);
-            }
+            DeleteCar(oldRegNr);
+            AddCar(newCar);
         }
     }
 }

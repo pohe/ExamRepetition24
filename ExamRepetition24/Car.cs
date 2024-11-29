@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ExamRepetition24
 {
+
+    /// <summary>
+    /// Spg 1. Klasser og Objekter
+    /// </summary>
     public class Car
     {
         public string Model { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExamRepetition24
 {
+    /// <summary>
+    /// Spg 5. Inheritance (Arv)
+    /// </summary>
     public class ECar :Car  //ECar is a Car
     {
 		private int _range;
