@@ -10,26 +10,6 @@ Car c3 = new Car("FG 5454", "Volvo");
 Console.WriteLine(c3);
 Car c4 = new Car("XDD 4556", "Volvo");
 Console.WriteLine(c4);
-try
-{
-    
-    Car c5 = new Car("XXX123456789", "Mercedes");
-}
-catch(ArgumentException aex)
-{
-    Console.WriteLine(aex.Message);
-}
-
-Car c6 = new Car();
-try
-{
-    c6.RegNr = "YYY987654321";
-    c6.Model = "Mercedes";
-}
-catch (ArgumentException aex)
-{
-    Console.WriteLine(aex.Message);
-}
 
 Console.WriteLine("CarRepositoryList");
 
@@ -91,3 +71,39 @@ foreach( Car c in returnList)
 }
 
 
+try
+{
+
+    Car c5 = new Car("XXX123456789", "Mercedes");
+}
+catch (ArgumentException aex)
+{
+    Console.WriteLine(aex.Message);
+}
+catch (Exception exp)
+{
+    Console.WriteLine("Der forekom en generel fejl");
+}
+finally
+{
+    Console.WriteLine("I denne del komme man altid ligegyldigt om der forekommer fejl eller ej!");
+}
+
+Car c6 = new Car();
+try
+{
+    c6.RegNr = "YYY987654321";
+    c6.Model = "Mercedes";
+}
+catch (ArgumentException aex)
+{
+    Console.WriteLine(aex.Message);
+}
+catch (Exception exp)
+{
+    Console.WriteLine("Der forekom en generel fejl");
+}
+finally
+{
+    Console.WriteLine("I denne del komme man altid ligegyldigt om der forekommer fejl eller ej!");
+}
