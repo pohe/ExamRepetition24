@@ -2,15 +2,34 @@
 using ExamRepetition24;
 
 Console.WriteLine("Hello, World!");
-
 Car c1 = new Car("AB 1231", "Volvo");
 Console.WriteLine(c1);
 Car c2 = new Car("CD 4343", "Volvo");
 Console.WriteLine(c2);
 Car c3 = new Car("FG 5454", "Volvo");
-Console.WriteLine(c2);
+Console.WriteLine(c3);
 Car c4 = new Car("XDD 4556", "Volvo");
-Console.WriteLine(c2);
+Console.WriteLine(c4);
+try
+{
+    
+    Car c5 = new Car("XXX123456789", "Mercedes");
+}
+catch(ArgumentException aex)
+{
+    Console.WriteLine(aex.Message);
+}
+
+Car c6 = new Car();
+try
+{
+    c6.RegNr = "YYY987654321";
+    c6.Model = "Mercedes";
+}
+catch (ArgumentException aex)
+{
+    Console.WriteLine(aex.Message);
+}
 
 Console.WriteLine("CarRepositoryList");
 

@@ -15,7 +15,14 @@ namespace ExamRepetition24
 		public string RegNr
 		{
 			get { return _regNr; }
-			set { _regNr = value; }
+			set { 
+                if (value.Length>10)
+                {
+                    throw new ArgumentException($"Regnr {value} er for langt ");
+                }
+                else
+                    _regNr = value; 
+            }
 		}
 
         public Car()
@@ -25,6 +32,12 @@ namespace ExamRepetition24
 
         public Car(string regNr, string model)
         {
+            if (regNr.Length > 10)
+            {
+                throw new ArgumentException($"Regnr {regNr} er for langt ");
+            }
+            else
+                _regNr = regNr;
             _regNr = regNr;
             Model = model; 
         }
