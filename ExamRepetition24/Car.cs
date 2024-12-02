@@ -19,7 +19,8 @@ namespace ExamRepetition24
 		public string RegNr
 		{
 			get { return _regNr; }
-			set { 
+			set
+            { //Spg. 8 Exception
                 if (value.Length>10)
                 {
                     throw new ArgumentException($"Regnr {value} er for langt ");
@@ -29,13 +30,20 @@ namespace ExamRepetition24
             }
 		}
 
+        //Spg. 13 Add Driver to Car
+
+        public Driver TheDriver { get; set; }
+
         public Car()
         {
             
         }
 
+
+
+
         public Car(string regNr, string model)
-        {
+        { //Spg. 8 Exception
             if (regNr.Length > 10)
             {
                 throw new ArgumentException($"Regnr {regNr} er for langt ");
@@ -46,6 +54,11 @@ namespace ExamRepetition24
             Model = model; 
         }
 
+        public void AddDriverToCar(Driver driver)
+        {
+            TheDriver = driver; 
+        }
+
         public virtual void PrintInfo()
         {
             Console.WriteLine($"RegNr {_regNr} Model {Model}");
@@ -53,7 +66,7 @@ namespace ExamRepetition24
 
         public override string ToString()
         {
-            return $"RegNr {_regNr} Model {Model}";
+            return $"RegNr {_regNr} Model {Model} Driver { (TheDriver != null ? TheDriver.Name : "No driver") }";
         }
 
     }
